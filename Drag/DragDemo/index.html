@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .box {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      background: rgb(113, 201, 55);
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var box = document.getElementsByTagName('div')[0],
+        disX,
+        disY;
+
+    box.onmousedown = function (e) {
+      // offsetX = e.pageX - parseInt(box.style.left);
+      // offsetY = e.pageY = parseInt(box.style.top);
+      // this.style.backgroundColor = 'red';
+      // console.log(e.clientX, e.clientY);
+      box.onmousemove = function (e) {
+        // console.log(box.style.left, e.pageY);
+        var event = e || window.event;
+        box.style.left = e.pageX  + "px";
+        box.style.top = e.pageY  + "px";
+      }
+      // box.onmouseup = function () {
+      //   box.onmousemove = null;
+      // }
+    }
+  </script>
+</body>
+</html>

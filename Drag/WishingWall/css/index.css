@@ -1,0 +1,68 @@
+body {
+  background: #eceef2;
+}
+.cards {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 150px;
+}
+
+.item {
+    width: 170px;
+    height: 170px;
+    box-sizing: border-box;
+    padding: 15px;
+    position: absolute;
+    border-radius: 5px;
+    cursor: move;
+}
+
+.close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 1.2em;
+    padding: 0 10px;
+    width: 250px;
+    height: 40px;
+    bottom: 40px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0 0 5px #acacac;
+}
+
+.text:focus {
+    outline: none;
+}
+
+#circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, 0.25);
+
+  left: 62%;
+  bottom: 4%;
+}
+
+#circle:hover {
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+              inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.25);
+}
