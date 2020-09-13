@@ -1,31 +1,96 @@
-#head .headMain {
-  width: 1100px;
-  height: 80px;
-  background: #dddddd;
-  margin: 0 auto;
-    .logo {
-      float: left;
-      margin-top: 30px;
-    }
-    .nav {
-      float: right;
-      margin-top: 50px;
-      li {
-        position: relative;
+html,body {
+  height: 100%;
+}
+#head {
+  z-index: 9999;
+  background: #ffffff !important;
+  .headMain {
+    position: relative;
+    width: 1100px;
+    height: 80px;
+    margin: 0 auto;
+      .logo {
         float: left;
-        margin-left: 40px;
-        .up {
-          position: absolute;
-          color: #000000;
-          width: 0;
-          overflow: hidden;
-          transition: 1s width;
-        }
-        &:hover {
+        margin-top: 30px;
+      }
+      .nav {
+        float: right;
+        margin-top: 50px;
+        li {
+          position: relative;
+          float: left;
+          margin-left: 40px;
+          font-weight: 700;
           .up {
-            width: 100%;
+            position: absolute;
+            color: #009fe3;
+            width: 0;
+            overflow: hidden;
+            transition: 1s width;
+          }
+          &:hover {
+            .up {
+              width: 100%;
+            }
           }
         }
       }
+    .arrow {
+      position: absolute;
+      width: 21px;
+      height: 11px;
+      left: 50%;
+      bottom: -11px;
+      background: url(../img/menuIndicator.png);
+      transition: 1s left;
+      z-index: 9999;
     }
+  }
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  .page-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 1s top;
+    li {
+      position: relative;
+      div {
+        position: absolute;
+        width: 1100px;
+        height: 520px;
+        background: #c0c0c0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      &.home {
+        background: url(../img/bg1.jpg) no-repeat;
+        background-size: cover;
+      }
+      &.course {
+        background: url(../img/bg2.jpg) no-repeat;
+        background-size: cover;
+      }
+      &.works {
+        background: url(../img/bg3.jpg) no-repeat;
+        background-size: cover;
+      }
+      &.about {
+        background: url(../img/bg4.jpg) no-repeat;
+        background-size: cover;
+      }
+      &.team {
+        background: url(../img/bg5.jpg) no-repeat;
+        background-size: cover;
+      }
+    }
+  }
 }

@@ -22,11 +22,11 @@
           </a>
         </h1>
         <nav class="nav">
-          <ul>
+          <ul class="clearfix" id="list">
             <li>
               <a href="javascript:;">
-                <div class="up"><img src="img/home_gruen.png" /></div>
-                <div class="down"><img src="img/home.png" /></div>
+                <div class="up iconfont">&#xe630;</div>
+                <div class="down iconfont">&#xe630;</div>
               </a>
             </li>
             <li>
@@ -53,14 +53,88 @@
                 <div class="down">Team</div>
               </a>
             </li>
-            
           </ul>
         </nav>
         <div class="arrow"></div>
       </div>
     </header>
+    <main id="content">
+      <ul class="page-list">
+        <li class="home">
+          <div>home</div>
+        </li>
+        <li class="course">
+          <div>course</div>
+        </li>
+        <li class="works">
+          <div>works</div>
+        </li>
+        <li class="about">
+          <div>about</div>
+        </li>
+        <li class="team">
+          <div>team</div>
+        </li>
+      </ul>
+    </main>
   </section>
 
 </body>
+<script>
+  window.onload = function () {
+    const oArrowEl = document.getElementsByClassName('arrow')[0];
+    const oliNodes = document.getElementById('list').getElementsByTagName('li');
+    const oUpNodes = document.getElementById('list').getElementsByClassName('up');
+    const firstLiNode = oliNodes[0];
+    const firstUpLiNode = firstLiNode.getElementsByClassName('up')[0];
+    let lastIndex = 0; // 记录上次点击的索引
+    const oHeadNode = document.getElementById('head');
+    const oContentNode = document.getElementById('content');
+    const ocLiNodes = oContentNode.getElementsByTagName('li');
+    const ocListNode = oContentNode.getElementsByClassName('page-list')[0];
+
+    window.onresize = function () {
+      contentBind();
+      ocListNode.style.top = -lastIndex * (document.documentElement.clientHeight - oHeadNode.offsetHeight) + "px";
+      oArrowEl.style.left = oliNodes[i].offsetLeft + oliNodes[i].offsetWidth / 2 - oArrowEl.offsetWidth / 2 +
+        "px";
+    }
+
+    headBind();
+    contentBind();
+    move();
+
+    function move() {
+      for (let i = 0; i < oliNodes.length; i++) {
+        oliNodes[i].onclick = function () {
+          oUpNodes[lastIndex].style.width = "";
+          oUpNodes[i].style.width = "100%";
+          lastIndex = i;
+          oArrowEl.style.left = oliNodes[i].offsetLeft + oliNodes[i].offsetWidth / 2 - oArrowEl.offsetWidth / 2 +
+            "px";
+          ocListNode.style.top = -i * (document.documentElement.clientHeight - oHeadNode.offsetHeight) + "px";
+        }
+      }
+    }
+
+    function headBind() {
+      firstUpLiNode.style.width = "100%";
+      oArrowEl.style.left = firstLiNode.offsetLeft + firstLiNode.offsetWidth / 2 - oArrowEl.offsetWidth / 2 + "px";
+    }
+
+    function contentBind() {
+      if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+        winHeight = document.documentElement.clientHeight;
+        // winWidth = document.documentElement.clientWidth;
+      }
+      oContentNode.style.height = winHeight - oHeadNode.offsetHeight + "px";
+      for (let i = 0; i < ocLiNodes.length; i++) {
+        ocLiNodes[i].style.height = winHeight - oHeadNode.offsetHeight + "px";
+      }
+    }
+
+
+  }
+</script>
 
 </html>
