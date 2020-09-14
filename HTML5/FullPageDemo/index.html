@@ -61,19 +61,128 @@
     <main id="content">
       <ul class="page-list">
         <li class="home">
-          <div>home</div>
+          <section>home</section>
         </li>
         <li class="course">
-          <div>course</div>
+          <section>
+            <header class="commonTitle">
+              <span>EINIGE</span><br />
+              <span>URSERE</span><br />
+              <span>KUNDEN</span><br />
+            </header>
+            <div class="commonText">
+              <p>Das Kundenvertrauen in unsere Kompetenz ist die notwendige Basis einer erfolgreichen Zusammenarbeit,
+                gleichzeitig aber auch das größte Lob, das man uns entgegenbringen kann. </p>
+              <p>Diese und viele weitere große und kleine Kunden vertrauen uns seit Jahren, was uns stolz macht, und
+                dafür sagen wir an dieser Stelle einfach mal.</p>
+            </div>
+            <div class="picWall">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdf</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdf</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdf</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfddf</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdfd</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdfd</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdf</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdfd</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdfd</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdfd</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">dfdfd</div>
+              </div>
+              <div class="item">
+                <div class="backFace"></div>
+                <div class="face">ddf</div>
+              </div>
+            </div>
+
+          </section>
         </li>
         <li class="works">
-          <div>works</div>
+          <section>
+            <header class="commonTitle">
+              <span>EINIGE</span><br />
+              <span>ERKENNTNIS</span><br />
+              <span>ERGEBNIS</span><br />
+            </header>
+            <ul class="list">
+              <li class="item">
+                <img src="./img/worksimg1.jpg" alt="worksimg1">
+                <div class="mask">
+                  <span>Das Kundenvertrauen in unsere Kompetenz ist die notwendige Basis einer erfolgreichen
+                    Zusammenarbeit, gleichzeitig aber auch das größte Lob, das man uns entgegenbringen kann. </span>
+                  <div class="icon"></div>
+                </div>
+              </li>
+              <li class="item">
+                <img src="./img/worksimg2.jpg" alt="worksimg2">
+                <div class="mask">
+                  <span>Kompetenz ist die notwendige Basis einer erfolgreichen Zusammenarbeit, gleichzeitig aber auch
+                    das größte Lob, das man uns entgegenbringen kann. </span>
+                  <div class="icon"></div>
+                </div>
+              </li>
+              <li class="item">
+                <img src="./img/worksimg3.jpg" alt="worksimg3">
+                <div class="mask">
+                  <span>Basis einer erfolgreichen Zusammenarbeit, gleichzeitig aber auch das größte Lob, das man uns
+                    entgegenbringen kann. </span>
+                  <div class="icon"></div>
+                </div>
+              </li>
+              <li class="item">
+                <img src="./img/worksimg4.jpg" alt="worksimg4">
+                <div class="mask">
+                  <span>Gleichzeitig aber auch das größte Lob, das man uns entgegenbringen kann. </span>
+                  <div class="icon"></div>
+                </div>
+              </li>
+
+            </ul>
+            <div class="robot"></div>
+          </section>
         </li>
         <li class="about">
-          <div>about</div>
+          <section>about</section>
         </li>
         <li class="team">
-          <div>team</div>
+          <section>team</section>
         </li>
       </ul>
     </main>
@@ -92,29 +201,31 @@
     const oContentNode = document.getElementById('content');
     const ocLiNodes = oContentNode.getElementsByTagName('li');
     const ocListNode = oContentNode.getElementsByClassName('page-list')[0];
+    let timer = null;
 
     window.onresize = function () {
       contentBind();
       ocListNode.style.top = -lastIndex * (document.documentElement.clientHeight - oHeadNode.offsetHeight) + "px";
-      oArrowEl.style.left = oliNodes[i].offsetLeft + oliNodes[i].offsetWidth / 2 - oArrowEl.offsetWidth / 2 +
-        "px";
+      oArrowEl.style.left = oliNodes[lastIndex].offsetLeft + oliNodes[lastIndex].offsetWidth / 2 - oArrowEl
+        .offsetWidth / 2 + "px";
     }
 
     headBind();
     contentBind();
-    move();
 
-    function move() {
-      for (let i = 0; i < oliNodes.length; i++) {
-        oliNodes[i].onclick = function () {
-          oUpNodes[lastIndex].style.width = "";
-          oUpNodes[i].style.width = "100%";
-          lastIndex = i;
-          oArrowEl.style.left = oliNodes[i].offsetLeft + oliNodes[i].offsetWidth / 2 - oArrowEl.offsetWidth / 2 +
-            "px";
-          ocListNode.style.top = -i * (document.documentElement.clientHeight - oHeadNode.offsetHeight) + "px";
-        }
+    for (let i = 0; i < oliNodes.length; i++) {
+      oliNodes[i].onclick = function () {
+        move(i);
       }
+    }
+
+    function move(i) {
+      oUpNodes[lastIndex].style.width = "";
+      oUpNodes[i].style.width = "100%";
+      lastIndex = i;
+      oArrowEl.style.left = oliNodes[i].offsetLeft + oliNodes[i].offsetWidth / 2 - oArrowEl.offsetWidth / 2 +
+        "px";
+      ocListNode.style.top = -i * (document.documentElement.clientHeight - oHeadNode.offsetHeight) + "px";
     }
 
     function headBind() {
@@ -123,17 +234,52 @@
     }
 
     function contentBind() {
-      if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
-        winHeight = document.documentElement.clientHeight;
-        // winWidth = document.documentElement.clientWidth;
-      }
-      oContentNode.style.height = winHeight - oHeadNode.offsetHeight + "px";
+      oContentNode.style.height = document.documentElement.clientHeight - oHeadNode.offsetHeight + "px";
       for (let i = 0; i < ocLiNodes.length; i++) {
-        ocLiNodes[i].style.height = winHeight - oHeadNode.offsetHeight + "px";
+        ocLiNodes[i].style.height = document.documentElement.clientHeight - oHeadNode.offsetHeight + "px";
       }
     }
+    if (oContentNode.addEventListener) {
+      oContentNode.addEventListener("DOMMouseScroll", function (e) {
+        e = e || event;
+        clearInterval(timer);
+        timer = setTimeout(function () {
+          fn(e);
+        }, 200)
+      });
+    }
+    oContentNode.onmousewheel = function (e) {
+      e = e || event;
+      clearInterval(timer);
+      timer = setTimeout(function () {
+        fn(e);
+      }, 200)
+    }
 
+    function fn(e) {
+      e = e || event;
 
+      let dir = "";
+      if (e.wheelDelta) {
+        dir = e.wheelDelta > 0 ? "up" : "down";
+      } else if (e.detail) {
+        dir = e.detail < 0 ? "up" : "down";
+      }
+      switch (dir) {
+        case "up":
+          if (lastIndex > 0) {
+            lastIndex--;
+            move(lastIndex);
+          }
+          break;
+        case "down":
+          if (lastIndex < ocLiNodes.length - 1) {
+            lastIndex++;
+            move(lastIndex);
+          }
+          break;
+      }
+    }
   }
 </script>
 
