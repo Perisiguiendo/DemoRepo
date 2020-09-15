@@ -75,6 +75,78 @@ body {
   background: url(../img/bg1.jpg) no-repeat;
   background-size: cover;
 }
+#content .page-list li.home .carousel {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+#content .page-list li.home .carousel li {
+  position: absolute;
+  height: 520px !important;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  visibility: hidden;
+}
+#content .page-list li.home .carousel li div {
+  color: #ffffff;
+  text-align: center;
+  line-height: 520px;
+}
+#content .page-list li.home .carousel li.active {
+  visibility: visible;
+}
+#content .page-list li.home .carousel li:nth-child(1) {
+  background: #dc6c5f;
+}
+#content .page-list li.home .carousel li:nth-child(2) {
+  background: #95dc84;
+}
+#content .page-list li.home .carousel li:nth-child(3) {
+  background: #64b9d2;
+}
+#content .page-list li.home .carousel li:nth-child(4) {
+  background: #000000;
+}
+#content .page-list li.home .carousel li.leftHide {
+  visibility: hidden;
+  animation: leftHide 2s 1 linear;
+}
+#content .page-list li.home .carousel li.rightShow {
+  visibility: visible;
+  animation: rightShow 2s 1 linear;
+}
+#content .page-list li.home .carousel li.leftShow {
+  visibility: visible;
+  animation: leftShow 2s 1 linear;
+}
+#content .page-list li.home .carousel li.rightHide {
+  visibility: hidden;
+  animation: rightHide 2s 1 linear;
+}
+#content .page-list li.home .btn-click {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+#content .page-list li.home .btn-click li {
+  display: inline-block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px !important;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 2px;
+  box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
+  cursor: pointer;
+}
+#content .page-list li.home .btn-click li.active {
+  background: rgba(255, 255, 255, 0.9);
+  cursor: default;
+}
 #content .page-list li.course {
   position: relative;
   background: url(../img/bg2.jpg) no-repeat;
@@ -99,6 +171,7 @@ body {
   float: left;
   width: 118px;
   height: 132px;
+  margin-bottom: 2px;
   perspective: 500px;
   transform-style: preserve-3d;
 }
@@ -119,10 +192,15 @@ body {
   width: 100%;
 }
 #content .page-list li.course .picWall .item .face {
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  line-height: 132px;
+  font-weight: 700;
   transform: rotateY(180deg);
   backface-visibility: hidden;
   transition: 1s transform;
-  background-color: #49acd3;
+  background-image: linear-gradient(to top left, #1d4b83, #4082ad);
 }
 #content .page-list li.course .picWall .item .backFace {
   position: absolute;
@@ -247,6 +325,46 @@ body {
   }
   100% {
     transform: translateX(0px) rotateY(180deg);
+  }
+}
+@keyframes leftHide {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(-40%) rotateY(30deg) scale(0.8);
+  }
+  100% {
+    transform: translateZ(-200px);
+  }
+}
+@keyframes rightShow {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-200px);
+  }
+  50% {
+    transform: translateX(40%) rotateY(-30deg) scale(0.8);
+  }
+}
+@keyframes leftShow {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-200px);
+  }
+  50% {
+    transform: translateX(-40%) rotateY(30deg) scale(0.8);
+  }
+}
+@keyframes rightHide {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(40%) rotateY(-30deg) scale(0.8);
+  }
+  100% {
+    transform: translateZ(-200px);
   }
 }
 .commonTitle {
