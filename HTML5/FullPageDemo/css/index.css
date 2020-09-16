@@ -112,19 +112,19 @@ body {
 }
 #content .page-list li.home .carousel li.leftHide {
   visibility: hidden;
-  animation: leftHide 2s 1 linear;
+  animation: leftHide 1s 1 linear;
 }
 #content .page-list li.home .carousel li.rightShow {
   visibility: visible;
-  animation: rightShow 2s 1 linear;
+  animation: rightShow 1s 1 linear;
 }
 #content .page-list li.home .carousel li.leftShow {
   visibility: visible;
-  animation: leftShow 2s 1 linear;
+  animation: leftShow 1s 1 linear;
 }
 #content .page-list li.home .carousel li.rightHide {
   visibility: hidden;
-  animation: rightHide 2s 1 linear;
+  animation: rightHide 1s 1 linear;
 }
 #content .page-list li.home .btn-click {
   position: absolute;
@@ -154,10 +154,6 @@ body {
 }
 #content .page-list li.course header {
   margin: 50px;
-}
-#content .page-list li.course div.commonText {
-  width: 400px;
-  margin-left: 50px;
 }
 #content .page-list li.course .picWall {
   position: absolute;
@@ -306,12 +302,74 @@ body {
   animation-direction: reverse;
 }
 #content .page-list li.about {
+  position: relative;
   background: url(../img/bg3.jpg) no-repeat;
   background-size: cover;
+}
+#content .page-list li.about header {
+  margin: 50px 50px 100px 50px;
+  width: 500px;
+}
+#content .page-list li.about .pic-line {
+  position: absolute;
+  top: -100px;
+  right: 200px;
+  width: 357px;
+  height: 998px;
+  background: url(../img/greenLine.png) no-repeat;
+  z-index: 1;
+}
+#content .page-list li.about .pic-line .item {
+  position: absolute;
+  width: 260px;
+  height: 200px;
+  border-radius: 10px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  z-index: 99999;
+  overflow: hidden;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) {
+  left: 200px;
+  top: 150px;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) span {
+  background: url(../img/about2.jpg) no-repeat;
+  transform: scale(1.4);
+  transition: 1s transform;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) {
+  left: 50px;
+  top: 400px;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) span {
+  z-index: 4;
+  transform: scale(1.4);
+  background: url(../img/about4.jpg) no-repeat;
+  transition: 1s transform;
+}
+#content .page-list li.about .pic-line .item:hover span {
+  transform: scale(1);
+}
+#content .page-list li.about .pic-line .item span,
+#content .page-list li.about .pic-line .item ul {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 #content .page-list li.team {
   background: url(../img/bg5.jpg) no-repeat;
   background-size: cover;
+}
+#content .page-list li.team header {
+  margin: 50px;
+}
+#content .page-list li.team header div {
+  float: left;
+}
+#content .page-list li.team header div:nth-child(2) {
+  margin-left: 220px;
 }
 @keyframes robot_move {
   0% {
@@ -378,4 +436,6 @@ body {
   color: #ffffff;
   line-height: 1.5;
   font-size: 15px;
+  width: 400px;
+  margin-left: 50px;
 }

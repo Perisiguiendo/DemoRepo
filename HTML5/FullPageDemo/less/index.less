@@ -108,19 +108,19 @@ html,body {
             }
             &.leftHide {
               visibility: hidden;
-              animation: leftHide 2s 1 linear;
+              animation: leftHide 1s 1 linear;
             }
             &.rightShow {
               visibility: visible;
-              animation: rightShow 2s 1 linear;
+              animation: rightShow 1s 1 linear;
             }
             &.leftShow {
               visibility: visible;
-              animation: leftShow 2s 1 linear;
+              animation: leftShow 1s 1 linear;
             }
             &.rightHide {
               visibility: hidden;
-              animation: rightHide 2s 1 linear;
+              animation: rightHide 1s 1 linear;
             }
           }
         }
@@ -143,7 +143,6 @@ html,body {
               background: rgba(255,255,255,0.9);
               cursor: default;
             }
-            
           }
         }
       }
@@ -153,10 +152,6 @@ html,body {
         background-size: cover;
         header {
           margin: 50px;
-        }
-        div.commonText {
-          width: 400px;
-          margin-left: 50px;
         }
         .picWall {
           position: absolute;
@@ -310,12 +305,74 @@ html,body {
         }
       }
       &.about {
+        position: relative;
         background: url(../img/bg3.jpg) no-repeat;
         background-size: cover;
+        header {
+          margin: 50px 50px 100px 50px;
+          width: 500px;
+        }
+        .pic-line {
+          position: absolute;
+          top: -100px;
+          right: 200px;
+          width: 357px;
+          height: 998px;
+          background: url(../img/greenLine.png) no-repeat;
+          z-index: 1;
+          .item {
+            position: absolute;
+            width: 260px;
+            height: 200px;
+            border-radius: 10px;
+            border: 5px solid rgba(255,255,255,0.5);
+            z-index: 99999;
+            overflow: hidden;
+            &:nth-child(1) {
+              span {
+                background: url(../img/about2.jpg) no-repeat;
+                transform: scale(1.4);
+                transition: 1s transform;
+              }
+              left:200px;
+              top:150px;
+            }
+            &:nth-child(2) {
+              span {
+                z-index: 4;
+                transform: scale(1.4);
+                background: url(../img/about4.jpg) no-repeat;
+                transition: 1s transform;
+              }
+              left:50px;
+              top:400px;
+            }
+            &:hover span{
+              transform: scale(1);
+            }
+            span,
+            ul {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+            }
+          }
+        }
       }
       &.team {
         background: url(../img/bg5.jpg) no-repeat;
         background-size: cover;
+        header {
+          margin: 50px;
+          div {
+            float: left;
+            &:nth-child(2) {
+              margin-left: 220px;
+            }
+          }
+        }
       }
     }
   }
@@ -391,10 +448,13 @@ html,body {
   line-height: 0.8;
   font-weight: bold;
   letter-spacing: -5px;
+  
 }
 
 .commonText {
   color: #ffffff;
   line-height: 1.5;
   font-size: 15px;
+  width: 400px;
+  margin-left: 50px;
 }
