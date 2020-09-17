@@ -77,32 +77,29 @@ function auto3D() {
   }
 }
 
-const aboutULs = document.getElementsByClassName("pic-line")[0].getElementsByTagName("ul");
-console.log(aboutULs);
-picSegment();
+const persons = document.getElementsByClassName('persons')[0];
+const personsLis = persons.getElementsByTagName('li');
+let oc = null;
+console.log(persons);
 
-function picSegment() {
-  for (let i = 0; i < aboutULs.length; i++) {
-    change(aboutULs[i]);
+for (let i = 0; i < personsLis.length; i++) {
+  personsLis[i].onmouseenter = function () {
+    for (let j = 0; j < personsLis.length; j++) {
+      personsLis[j].style.opacity = .2;
+    }
+    this.style.opacity = 1;
+    addCanvas();
+  }
+  personsLis[i].onmouseleave = function () {
+    for (let j = 0; j < personsLis.length; j++) {
+      personsLis[j].style.opacity = 1;
+    }
   }
 }
 
-function change(UL) {
-  let src = UL.dataset.src;
-  let w = UL.offsetWidth / 2;
-  let h = UL.offsetHeight / 2;
-  for (let i = 0; i < 4; i++) {
-    let LiNode = document.createElement('li');
-    LiNode.style.width = w + "px";
-    LiNode.style.height = h + "px";
-    let imgNode = document.createElement('img');
-    imgNode.style.left = -(i % 2) * w + "px";
-    imgNode.style.top = -Math.floor(i / 2) * h + "px";
-    imgNode.src = src;
-    LiNode.appendChild(imgNode);
-    UL.appendChild(LiNode);
+function addCanvas() {
+  if(!oc) {
+    
   }
-
-  const imgNodes = document.getElementsByClassName
-
 }
+

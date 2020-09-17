@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>学生档案</legend>
+            <label for="userName">姓名</label>
+            <input type="text" name="userName" id="userName" placeholder="请输入姓名">
+            <label for="userPhone">手机号码</label>
+            <input type="tel" name="userPhone" id="userPhone" pattern="^1\d{10}$">
+            <label for="email">邮箱</label>
+            <input type="email" name="email" required id="email">
+            <label for="college">所属学院</label>
+            <input type="text" name="college" id="college" list="cList">
+            <datalist id="cList">
+                <option value="前端"></option>
+                <option value="Java"></option>
+                <option value="C++"></option>
+                <option value="C"></option>
+            </datalist>
+            <label for="score">入学成绩</label>
+            <input type="number" value="0" max="100" min="0" id="score">
+            <label for="level">基础水平</label>
+            <meter id="level" max="100" min="0" high="90" low="60"></meter>   
+            <label for="inTime">入学日期</label>
+            <input type="date" name="inTime">
+            <label for="leaveTime">毕业日期</label>
+            <input type="date" name="leaveTime">
+            <input type="submit">
+        </fieldset>
+    </form>
+</body>
+<script>
+    document.getElementById("score").oninput = function () {
+        document.getElementById("level").value = this.value;
+    }
+</script>
+</html>

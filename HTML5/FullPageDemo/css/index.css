@@ -314,9 +314,10 @@ body {
   position: absolute;
   top: -100px;
   right: 200px;
-  width: 357px;
-  height: 998px;
+  width: 500px;
+  height: 780px;
   background: url(../img/greenLine.png) no-repeat;
+  overflow: hidden;
   z-index: 1;
 }
 #content .page-list li.about .pic-line .item {
@@ -325,14 +326,68 @@ body {
   height: 200px;
   border-radius: 10px;
   border: 5px solid rgba(255, 255, 255, 0.5);
-  z-index: 99999;
+  z-index: 100;
   overflow: hidden;
+}
+#content .page-list li.about .pic-line .item span {
+  position: absolute;
+}
+#content .page-list li.about .pic-line .item span,
+#content .page-list li.about .pic-line .item ul {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 #content .page-list li.about .pic-line .item:nth-child(1) {
   left: 200px;
   top: 150px;
 }
+#content .page-list li.about .pic-line .item:nth-child(1) ul {
+  position: relative;
+  z-index: 10;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li {
+  position: absolute;
+  width: 130px;
+  height: 100px !important;
+  overflow: hidden;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li div {
+  width: 100%;
+  height: 100%;
+  transition: 1s transform;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(1) div {
+  background: url(../img/about1.jpg) no-repeat 0px 0px;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(2) div {
+  background: url(../img/about1.jpg) no-repeat -130px 0px;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(3) {
+  top: 100px;
+  left: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(3) div {
+  background: url(../img/about1.jpg) no-repeat 0px -100px;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(4) {
+  top: 100px;
+  right: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(1) ul li:nth-child(4) div {
+  background: url(../img/about1.jpg) no-repeat -130px -100px;
+}
 #content .page-list li.about .pic-line .item:nth-child(1) span {
+  z-index: 4;
   background: url(../img/about2.jpg) no-repeat;
   transform: scale(1.4);
   transition: 1s transform;
@@ -341,22 +396,69 @@ body {
   left: 50px;
   top: 400px;
 }
+#content .page-list li.about .pic-line .item:nth-child(2) ul {
+  position: relative;
+  z-index: 10;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li {
+  position: absolute;
+  width: 130px;
+  height: 100px !important;
+  overflow: hidden;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li div {
+  width: 100%;
+  height: 100%;
+  transition: 1s transform;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(1) div {
+  background: url(../img/about3.jpg) no-repeat 0px 0px;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(2) div {
+  background: url(../img/about3.jpg) no-repeat -130px 0px;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(3) {
+  top: 100px;
+  left: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(3) div {
+  background: url(../img/about3.jpg) no-repeat 0px -100px;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(4) {
+  top: 100px;
+  right: 0;
+}
+#content .page-list li.about .pic-line .item:nth-child(2) ul li:nth-child(4) div {
+  background: url(../img/about3.jpg) no-repeat -130px -100px;
+}
 #content .page-list li.about .pic-line .item:nth-child(2) span {
   z-index: 4;
   transform: scale(1.4);
   background: url(../img/about4.jpg) no-repeat;
   transition: 1s transform;
 }
+#content .page-list li.about .pic-line .item:hover ul:nth-child(1) li:nth-child(1) div {
+  transform: translateY(100px);
+}
+#content .page-list li.about .pic-line .item:hover ul:nth-child(1) li:nth-child(2) div {
+  transform: translateX(-130px);
+}
+#content .page-list li.about .pic-line .item:hover ul:nth-child(1) li:nth-child(3) div {
+  transform: translateX(130px);
+}
+#content .page-list li.about .pic-line .item:hover ul:nth-child(1) li:nth-child(4) div {
+  transform: translateY(-100px);
+}
 #content .page-list li.about .pic-line .item:hover span {
   transform: scale(1);
-}
-#content .page-list li.about .pic-line .item span,
-#content .page-list li.about .pic-line .item ul {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 #content .page-list li.team {
   background: url(../img/bg5.jpg) no-repeat;
@@ -370,6 +472,47 @@ body {
 }
 #content .page-list li.team header div:nth-child(2) {
   margin-left: 220px;
+}
+#content .page-list li.team .persons {
+  position: absolute;
+  left: 50%;
+  margin-left: -472px;
+  top: 250px;
+  width: 948px;
+  height: 448px;
+}
+#content .page-list li.team .persons li {
+  width: 118px;
+  height: 100%;
+  background: url(../img/team.png) no-repeat;
+  float: left;
+  transition: 1s opacity;
+}
+#content .page-list li.team .persons li:nth-child(1) {
+  background-position: 0px 0px;
+}
+#content .page-list li.team .persons li:nth-child(2) {
+  background-position: -118px 0px;
+}
+#content .page-list li.team .persons li:nth-child(3) {
+  background-position: -238px 0px;
+}
+#content .page-list li.team .persons li:nth-child(4) {
+  background-position: -357px 0px;
+}
+#content .page-list li.team .persons li:nth-child(5) {
+  background-position: -475px 0px;
+}
+#content .page-list li.team .persons li:nth-child(6) {
+  width: 102px;
+  background-position: -588px 0px;
+}
+#content .page-list li.team .persons li:nth-child(7) {
+  width: 135px;
+  background-position: -691px 0px;
+}
+#content .page-list li.team .persons li:nth-child(8) {
+  background-position: -826px 0px;
 }
 @keyframes robot_move {
   0% {

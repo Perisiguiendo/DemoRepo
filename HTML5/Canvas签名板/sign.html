@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background: #eeeeee;
+        }
+
+        h3 {
+            position: absolute;
+            left: 33%;
+            top: 30%;
+        }
+
+        #sign {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            box-shadow: 5px 5px 10px #cccccc;
+            background: #ffffff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>签名板</h3>
+    <canvas id="sign" width="450px" height="300px">
+        您的浏览器不支持canvas，请更新至最新版XXX浏览器
+    </canvas>
+</body>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('sign');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+
+            ctx.moveTo(200,200);
+            ctx.lineTo(240,240);
+            ctx.fill();
+        }
+    }
+</script>
+
+
+</html>

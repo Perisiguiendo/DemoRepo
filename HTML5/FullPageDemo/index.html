@@ -61,7 +61,7 @@
     </header>
     <main id="content">
       <ul class="page-list">
-        <li class="home">
+        <li class="home page">
           <section>
             <ul class="carousel">
               <li class="active">
@@ -85,7 +85,7 @@
             </ul>
           </section>
         </li>
-        <li class="course">
+        <li class="course page">
           <section>
             <header class="commonTitle">
               <span>EINIGE</span><br />
@@ -156,7 +156,7 @@
 
           </section>
         </li>
-        <li class="works">
+        <li class="works page">
           <section>
             <header class="commonTitle">
               <span>EINIGE</span><br />
@@ -200,7 +200,7 @@
             <div class="robot"></div>
           </section>
         </li>
-        <li class="about">
+        <li class="about page">
           <section>
             <header class="commonTitle">
               <span>DIE</span><br />
@@ -213,17 +213,43 @@
             </p>
             <div class="pic-line">
               <div class="item">
+                <ul>
+                  <li>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div></div>
+                  </li>
+                </ul>
                 <span></span>
-                <ul data-src="./img/about1.jpg"></ul>
               </div>
               <div class="item">
+                <ul>
+                  <li>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div></div>
+                  </li>
+                </ul>
                 <span></span>
-                <ul data-src="./img/about3.jpg"></ul>
               </div>
             </div>
           </section>
         </li>
-        <li class="team">
+        <li class="team page">
           <section>
             <header>
               <div class="commonTitle">
@@ -244,7 +270,16 @@
                 </p>
               </div>
             </header>
-            <div class="bobble-pic"></div>
+            <ul class="persons">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
           </section>
         </li>
       </ul>
@@ -262,7 +297,7 @@
     let lastIndex = 0; // 记录上次点击的索引
     const oHeadNode = document.getElementById('head');
     const oContentNode = document.getElementById('content');
-    const ocLiNodes = oContentNode.getElementsByTagName('li');
+    const ocLiNodes = document.getElementsByClassName('page');
     const ocListNode = oContentNode.getElementsByClassName('page-list')[0];
     let timer = null;
 
@@ -321,7 +356,6 @@
 
     function fn(e) {
       e = e || event;
-
       let dir = "";
       if (e.wheelDelta) {
         dir = e.wheelDelta > 0 ? "up" : "down";
