@@ -251,7 +251,7 @@
         </li>
         <li class="team page">
           <section>
-            <header>
+            <header class="clearfix">
               <div class="commonTitle">
                 <span>WIR SIND</span><br />
                 <span>VOXELAIR</span><br />
@@ -270,18 +270,27 @@
                 </p>
               </div>
             </header>
-            <ul class="persons">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+            <div class="wrap">
+              <ul class="persons">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
           </section>
         </li>
+      </ul>
+      <ul class="dot">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
     </main>
   </section>
@@ -300,6 +309,7 @@
     const ocLiNodes = document.getElementsByClassName('page');
     const ocListNode = oContentNode.getElementsByClassName('page-list')[0];
     let timer = null;
+    let dots = document.getElementsByClassName('dot')[0].getElementsByTagName('li');
 
     window.onresize = function () {
       contentBind();
@@ -313,7 +323,9 @@
 
     for (let i = 0; i < oliNodes.length; i++) {
       oliNodes[i].onclick = function () {
+        dots[lastIndex].classList.remove('active');
         move(i);
+        dots[lastIndex].classList.add('active');
       }
     }
 
@@ -365,19 +377,24 @@
       switch (dir) {
         case "up":
           if (lastIndex > 0) {
+            dots[lastIndex].classList.remove('active');
             lastIndex--;
             move(lastIndex);
+            dots[lastIndex].classList.add('active');
           }
           break;
         case "down":
           if (lastIndex < ocLiNodes.length - 1) {
+            dots[lastIndex].classList.remove('active');
             lastIndex++;
             move(lastIndex);
+            dots[lastIndex].classList.add('active');
           }
           break;
       }
     }
   }
+
 </script>
 <script src="./script/index.js"></script>
 

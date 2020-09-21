@@ -470,8 +470,14 @@ html,body {
         }
       }
       &.team {
+        position: relative;
         background: url(../img/bg5.jpg) no-repeat;
         background-size: cover;
+        canvas {
+          z-index: 5;
+          position: absolute;
+          bottom: 0;
+        }
         header {
           margin: 50px;
           div {
@@ -481,49 +487,67 @@ html,body {
             }
           }
         }
-        .persons {
-          position: absolute;
-          left: 50%;
-          margin-left: -472px;
-          top: 250px;
-          width: 948px;
-          height: 448px;
-
-          li {
-            width: 118px;
-            height: 100%;
-            background: url(../img/team.png) no-repeat;
-            float: left;
-            transition: 1s opacity;
-
-            &:nth-child(1) {
-              background-position: 0px 0px;
-            }
-            &:nth-child(2) {
-              background-position: -118px 0px;
-            }
-            &:nth-child(3) {
-              background-position: -238px 0px;
-            }
-            &:nth-child(4) {
-              background-position: -357px 0px;
-            }
-            &:nth-child(5) {
-              background-position: -475px 0px;
-            }
-            &:nth-child(6) {
-              width: 102px;
-              background-position: -588px 0px;
-            }
-            &:nth-child(7) {
-              width: 135px;
-              background-position: -691px 0px;
-            }
-            &:nth-child(8) {
-              background-position: -826px 0px;
+        .wrap {
+          .persons {
+            z-index: 15;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 250px;
+            width: 948px;
+            height: 448px;
+            li {
+              width: 118px;
+              height: 100%;
+              background: url(../img/team.png) no-repeat;
+              float: left;
+              transition: 1s opacity;
+              &:nth-child(1) {
+                background-position: 0px 0px;
+              }
+              &:nth-child(2) {
+                background-position: -118px 0px;
+              }
+              &:nth-child(3) {
+                background-position: -238px 0px;
+              }
+              &:nth-child(4) {
+                background-position: -357px 0px;
+              }
+              &:nth-child(5) {
+                background-position: -475px 0px;
+              }
+              &:nth-child(6) {
+                width: 102px;
+                background-position: -588px 0px;
+              }
+              &:nth-child(7) {
+                width: 135px;
+                background-position: -691px 0px;
+              }
+              &:nth-child(8) {
+                background-position: -826px 0px;
+              }
             }
           }
         }
+        
+      }
+    }
+  }
+  .dot {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    li {
+      width: 12px;
+      height: 12px;
+      box-shadow: 0 0 4px rgba(255,255,255,0.8);
+      border: 1px solid rgb(201, 201, 201);
+      margin-top: 10px;
+      border-radius:50%;
+      &.active {
+        background: rgba(255,255,255,0.5);
       }
     }
   }
@@ -608,4 +632,17 @@ html,body {
   font-size: 15px;
   width: 400px;
   margin-left: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden; 
+  height: 0;
+  font-size:0;
+}
+
+.clearfix {
+  *zoom: 1;
 }

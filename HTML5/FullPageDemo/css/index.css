@@ -461,8 +461,14 @@ body {
   transform: scale(1);
 }
 #content .page-list li.team {
+  position: relative;
   background: url(../img/bg5.jpg) no-repeat;
   background-size: cover;
+}
+#content .page-list li.team canvas {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
 }
 #content .page-list li.team header {
   margin: 50px;
@@ -473,46 +479,63 @@ body {
 #content .page-list li.team header div:nth-child(2) {
   margin-left: 220px;
 }
-#content .page-list li.team .persons {
+#content .page-list li.team .wrap .persons {
+  z-index: 15;
   position: absolute;
   left: 50%;
-  margin-left: -472px;
+  transform: translateX(-50%);
   top: 250px;
   width: 948px;
   height: 448px;
 }
-#content .page-list li.team .persons li {
+#content .page-list li.team .wrap .persons li {
   width: 118px;
   height: 100%;
   background: url(../img/team.png) no-repeat;
   float: left;
   transition: 1s opacity;
 }
-#content .page-list li.team .persons li:nth-child(1) {
+#content .page-list li.team .wrap .persons li:nth-child(1) {
   background-position: 0px 0px;
 }
-#content .page-list li.team .persons li:nth-child(2) {
+#content .page-list li.team .wrap .persons li:nth-child(2) {
   background-position: -118px 0px;
 }
-#content .page-list li.team .persons li:nth-child(3) {
+#content .page-list li.team .wrap .persons li:nth-child(3) {
   background-position: -238px 0px;
 }
-#content .page-list li.team .persons li:nth-child(4) {
+#content .page-list li.team .wrap .persons li:nth-child(4) {
   background-position: -357px 0px;
 }
-#content .page-list li.team .persons li:nth-child(5) {
+#content .page-list li.team .wrap .persons li:nth-child(5) {
   background-position: -475px 0px;
 }
-#content .page-list li.team .persons li:nth-child(6) {
+#content .page-list li.team .wrap .persons li:nth-child(6) {
   width: 102px;
   background-position: -588px 0px;
 }
-#content .page-list li.team .persons li:nth-child(7) {
+#content .page-list li.team .wrap .persons li:nth-child(7) {
   width: 135px;
   background-position: -691px 0px;
 }
-#content .page-list li.team .persons li:nth-child(8) {
+#content .page-list li.team .wrap .persons li:nth-child(8) {
   background-position: -826px 0px;
+}
+#content .dot {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+}
+#content .dot li {
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  border: 1px solid #c9c9c9;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+#content .dot li.active {
+  background: rgba(255, 255, 255, 0.5);
 }
 @keyframes robot_move {
   0% {
@@ -581,4 +604,15 @@ body {
   font-size: 15px;
   width: 400px;
   margin-left: 50px;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+.clearfix {
+  *zoom: 1;
 }
